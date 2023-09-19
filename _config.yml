@@ -28,13 +28,13 @@ github_username:  cduta
 theme: minima
 plugins:
   - jekyll-feed
-highlighter: rouge
 kramdown:
   math_engine: mathjax
+  highlighter: rouge
   syntax_highlighter_opts:
-      block:
-          line_numbers: true
-          wrap: true
+    block:
+      line_numbers: true
+      wrap: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
