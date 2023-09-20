@@ -14,19 +14,26 @@ Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit number
 
 Jekyll also offers powerful support for code snippets:
 
-{% highlight ruby linenos %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-#=> prints 'Hi, Tom' to STDOUT.
-#=> prints 'Hi, Tom' to STDOUT.
-#=> prints 'Hi, Tom' to STDOUT.
-#=> prints 'Hi, Tom' to STDOUT.
-#=> prints 'Hi, Tom' to STDOUT.
-#=> prints 'Hi, Tom' to STDOUT.
-#=> prints 'Hi, Tom' to STDOUT.
+{% highlight sql linenos %}
+-- This is a comment
+select 42
+from   dual;
+{% endhighlight %}
+
+{% highlight sql linenos %}
+-- This is a comment
+create table t (
+  x int  primary key generated always as identity,
+  y text not null check (y <> '' and y <> 'my big no-no string')
+);
+
+-- This is a comment
+create function f(x int)
+returns real as $$
+  select sum(t.y + (select 42 from dual)) + f.x
+  from   t
+  where  t.y <> 42;
+$$ language sql;
 {% endhighlight %}
 
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
